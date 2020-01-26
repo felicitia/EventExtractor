@@ -33,7 +33,7 @@ import com.opencsv.CSVWriter;
 
 public class TestAnalyzer {
 
-	static String className = "Wish.RepresentativeTests";
+	static String className = "SixPM.RepresentativeTests";
 	static String outputFile = null;
 	static String sootClassPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/TestBenchmark-Jave-client/target/classes";
 	static String appiumPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/java-client-7.0.0.jar";
@@ -120,10 +120,11 @@ public class TestAnalyzer {
 				GUIEvent event = new GUIEvent();
 				event.action = GUIEvent.sendKeys;
 				InvokeExpr invoke = stmt.getInvokeExpr();
-				event.input = inputMap.get(invoke.getArg(0).toString()); 
-				String caller = getStrInBrackets(invoke.getUseBoxes().get(0).toString());
+				event.input = inputMap.get(invoke.getArg(0).toString());
+				// the 2nd UseBox is the caller for sendKeys()
+				String caller = getStrInBrackets(invoke.getUseBoxes().get(1).toString());
+				//caller is wrong should be r1.<> r6
 				event.id_or_xpath = guiMap.get(caller);
-				
 				eventArray.add(event2JSON(event));
 //				System.out.println("yixue: "+ event2JSON(event));
 				System.out.println("successfully analyzed: "+ stmt);
@@ -134,6 +135,7 @@ public class TestAnalyzer {
 				GUIEvent event = new GUIEvent();
 				event.action = GUIEvent.click;
 				InvokeExpr invoke = stmt.getInvokeExpr();
+				// the 1st UseBox is the caller for click()
 				String caller = getStrInBrackets(invoke.getUseBoxes().get(0).toString());
 				event.id_or_xpath = guiMap.get(caller);
 				eventArray.add(event2JSON(event));
