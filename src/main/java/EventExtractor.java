@@ -31,14 +31,13 @@ import soot.toolkits.graph.UnitGraph;
 import com.opencsv.CSVWriter;
 
 
-public class TestAnalyzer {
+public class EventExtractor {
 
-	static String className = "usatoday.RepresentativeTests";
-	static String outputFile = null;
-	static String sootClassPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/TestBenchmark-Jave-client/target/classes/news";
-	static String appiumPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/java-client-7.0.0.jar";
-	
-	static String testDir = "/Users/yixue/Documents/Research/FrUITeR/Develop/ProcessedTest_CSV/news/";
+	static String className = null; //"Etsy.RepresentativeTests";
+//	static String outputFile = null;
+	static String sootClassPath = null; //"/Users/yixue/Documents/Research/FrUITeR/Artifacts/example_tests/target/classes";
+//	static String appiumPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/java-client-7.0.0.jar";
+	static String testDir = null; //"/Research/FrUITeR/Artifacts/";
 	
 	static SootClass sootClass = null;
 	static SootMethod method = null;
@@ -47,6 +46,9 @@ public class TestAnalyzer {
 	static String LINE_TAG = "LineNumberTag";
 
 	public static void main(String[] args) throws IOException{
+		className = args[0];
+		sootClassPath = args[1];
+		testDir = args[2];
 		// TODO Auto-generated method stub
 			sootSetting(className);
 //		add test body to testBodyList
