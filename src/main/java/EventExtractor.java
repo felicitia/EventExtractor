@@ -33,12 +33,12 @@ import com.opencsv.CSVWriter;
 
 public class TestAnalyzer {
 
-	static String className = "SixPM.RepresentativeTests";
+	static String className = "usatoday.RepresentativeTests";
 	static String outputFile = null;
-	static String sootClassPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/TestBenchmark-Jave-client/target/classes";
+	static String sootClassPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/TestBenchmark-Jave-client/target/classes/news";
 	static String appiumPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/java-client-7.0.0.jar";
 	
-	static String testDir = "/Users/yixue/Documents/Research/FrUITeR/Develop/ProcessedTest_CSV/";
+	static String testDir = "/Users/yixue/Documents/Research/FrUITeR/Develop/ProcessedTest_CSV/news/";
 	
 	static SootClass sootClass = null;
 	static SootMethod method = null;
