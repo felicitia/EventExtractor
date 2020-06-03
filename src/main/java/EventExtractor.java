@@ -69,7 +69,6 @@ public class EventExtractor {
 //			printAllUnits(body);
 //		}
 			writeTest2File();
-
 	}
 	
 	public static void writeTest2File(){
