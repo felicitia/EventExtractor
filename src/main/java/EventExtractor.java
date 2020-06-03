@@ -35,7 +35,7 @@ public class EventExtractor {
 
 	static String className = null; //"Etsy.RepresentativeTests";
 //	static String outputFile = null;
-	static String sootClassPath = null; //"/Users/yixue/Documents/Research/FrUITeR/Artifacts/example_tests/target/classes";
+	static String sootClassPath = null; // "/target/classes";
 //	static String appiumPath = "/Users/yixue/Documents/Research/FrUITeR/Develop/java-client-7.0.0.jar";
 	static String testDir = null; //"/Research/FrUITeR/Artifacts/";
 	
@@ -46,9 +46,10 @@ public class EventExtractor {
 	static String LINE_TAG = "LineNumberTag";
 
 	public static void main(String[] args) throws IOException{
-		className = args[0];
-		sootClassPath = args[1];
-		testDir = args[2];
+		className = args[0]; // the classname of the test class, e.g., Etsy.RepresentativeTests
+		sootClassPath = args[1]; // the location of the .class files, e.g., /target/classes
+		testDir = args[2]; // specify the output folder
+
 		// TODO Auto-generated method stub
 			sootSetting(className);
 //		add test body to testBodyList
